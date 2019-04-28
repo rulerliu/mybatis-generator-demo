@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <properties resource="mysql.properties"/>
+
+    <classPathEntry location="D:\Java\mysql-connector-java-5.1.46.jar" />
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- Oracle -->
+        <!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+            connectionURL="jdbc:oracle:thin:@172.20.16.***:1521:CARGO"
+            userId="***" password="***" /> -->
+
+        <!-- Mysql -->
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}" />
+
+        <!--自动生成的实体的存放包路径 -->
+        <javaModelGenerator targetPackage="com.mtyikt.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--自动生成的*Mapper.xml文件存放路径 -->
+        <sqlMapGenerator targetPackage="com.mayikt.mapper.xml"
+                         targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--自动生成的*Mapper.java存放路径 -->
+        <javaClientGenerator targetPackage="com.mayikt.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--<table tableName="T_FEE_AGTBILL" domainObjectName="FeeAgentBill" enableCountByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false"/> -->
+
+        <!-- 如果有多个表，复制这一段，改下表名即可 -->
+        <table tableName="activity_black_list" domainObjectName="ActivityBlackList"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <!--<columnRenamingRule searchString="^D_" replaceString=""/> -->
+        </table>
+
+    </context>
+</generatorConfiguration>
