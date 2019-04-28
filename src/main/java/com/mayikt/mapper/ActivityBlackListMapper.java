@@ -1,17 +1,17 @@
 package com.mayikt.mapper;
 
-import com.mtyikt.entity.ActivityBlackListPO;
+import com.mayikt.entity.ActivityBlackList;
 
 public interface ActivityBlackListMapper {
     int deleteByPrimaryKey(Long blackListId);
 
-    int insert(ActivityBlackListPO record);
+    int insert(ActivityBlackList record);
 
-    int insertSelective(ActivityBlackListPO record);
+    int insertSelective(ActivityBlackList record);
 
-    ActivityBlackListPO selectByPrimaryKey(Long blackListId);
+    ActivityBlackList selectByPrimaryKey(Long blackListId);
 
-    int updateByPrimaryKeySelective(ActivityBlackListPO record);
+    int updateByPrimaryKeySelective(ActivityBlackList record);
 
-    int updateByPrimaryKey(ActivityBlackListPO record);
+    int updateByPrimaryKey(ActivityBlackList record);
 }

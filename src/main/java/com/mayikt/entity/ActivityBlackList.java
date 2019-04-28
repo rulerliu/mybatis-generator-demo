@@ -1,6 +1,6 @@
-package com.mtyikt.entity;
+package com.mayikt.entity;
 
-public class ActivityBlackListPO {
+public class ActivityBlackList {
     private Long blackListId;
 
     private Long activityBlackListFileId;
