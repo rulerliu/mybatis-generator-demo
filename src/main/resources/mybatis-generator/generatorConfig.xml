@@ -26,20 +26,20 @@
                         password="${spring.datasource.password}" />
 
         <!--自动生成的实体的存放包路径 -->
-        <javaModelGenerator targetPackage="com.mayikt.entity"
+        <javaModelGenerator targetPackage="com.unicom.microserv.ocsrtsp.activity.po"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
         <!--自动生成的*Mapper.xml文件存放路径 -->
-        <sqlMapGenerator targetPackage="com.mayikt.mapper.xml"
-                         targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
         <!--自动生成的*Mapper.java存放路径 -->
-        <javaClientGenerator targetPackage="com.mayikt.mapper"
+        <javaClientGenerator targetPackage="com.unicom.microserv.ocsrtsp.activity.dao"
                              targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
@@ -49,7 +49,7 @@
             selectByExampleQueryId="false"/> -->
 
         <!-- 如果有多个表，复制这一段，改下表名即可 -->
-        <table tableName="activity_black_list" domainObjectName="ActivityBlackList"
+        <table tableName="PAGE_VISIT_LOG" domainObjectName="PageVisitLog"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
